@@ -1,0 +1,84 @@
+<?php
+	session_start();
+	if(!isset($_SESSION["username"])){
+		echo "<script>window.location = 'login.php'</script>";
+	}
+
+?>
+
+<html>
+	<head>
+		<title>wall</title>
+		<link rel="stylesheet" type="text/css" href="boxes.css" />
+		<style type="text/css">body{
+			background: #ecf0f1;
+		}
+		</style>
+	</head>
+<body>
+<div class="introBar">
+	<div class="introHead1">Geeks@iiti.ac.in</div>
+</div>
+
+<div class="post">
+	<form action="upload_dolan.php" method="post" enctype="multipart/form-data">
+
+	<label for="file" class="post_text">Post : </label><br />
+	<div class="hr_post"></div>
+	<input type="text" name="creation_post" required style="position:relative; top:40px; left:20px; height:85px; width:400px;"><br>
+
+	<label for="file">Pic : </label>
+	<input type="file" name="creation_pic" required><br>
+
+	<label for="file">Pdf : </label>
+	<input type="file" name="creation_pdf" required><br>
+
+	<input type="submit" name="submit" value="Post">
+	
+
+	</form>
+
+ </div>
+</body>
+</html>
+ 
+	<?php
+			echo "<br><br><br><br><br><br><br><br><br><br><br><br>";
+			Echo "<a href=profile.php>My Profile</a>";
+			echo "<br><br><br>";
+			Echo "<a href=logout.php>Logout</a>";
+			$db_wall=mysqli_connect('localhost','root','','creation');
+			
+			//$query_wall="SELECT *FROM dolan";
+			$query_wall_sort="SELECT * FROM `dolan` ORDER BY id DESC";
+			
+			$temp_res=mysqli_query($db_wall,$query_wall_sort)
+			//$result=mysqli_query($db_wall,$query_wall)
+			or die('!!!!	');
+			echo '<div style="position:absolute; top:400px">';
+			while($row1=mysqli_fetch_array($temp_res)){
+				
+				$usname=$row1['username'];
+				
+				$post_owner_pic_query="SELECT * FROM `profile` WHERE username='$usname'";
+				
+				$temp_res_1=mysqli_query($db_wall,$post_owner_pic_query);
+				
+				$row2=mysqli_fetch_array($temp_res_1);
+				
+				echo '<a href="profile_visit.php"><img src="'.$row2['profile_pic'].'" width="110" height="110" alt="Score image" ></a>';
+				$usq=$row2['username'];
+				$link_pic="profile_visit.php?geek=".$usq;
+				echo '<a href="'.$link_pic.'">'.$usq.'</a>';
+			//	echo <a>$row2['username']</a>;
+				echo "<br>";
+				echo $row2['nerd_name'];
+				echo '<div class="boxes"><div style="position:relative; top:40px; left:350px;">' .$row1['creation_post'].'</div><div style="position:relative; top:60px; left:350px;"><a href=' .$row1['creation_pdf'].'>PDF</a></div><div style="position:relative; left:700px; bottom:10px"><td><img src="'.$row1['creation_pic'].'" width="190" height="190" alt="Score image" /></td></tr></div></div>';
+	 		}
+	 		echo '</div>';
+			mysqli_close($db_wall);
+	?>
+
+</body>
+</html>
+

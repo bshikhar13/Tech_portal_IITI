@@ -1,0 +1,160 @@
+@import url(http://fonts.googleapis.com/css?family=Lato:300,400,700);
+@import url(http://fonts.googleapis.com/css?family=Audiowide);
+@import url(https://fonts.googleapis.com/css?family=Lato:400,700);
+
+.post{
+	position: absolute;
+	top: 170px;
+	left: 215px;
+	width: 900px;
+	height: 200px;
+	background: #bdc3c7;
+	margin: 10px;
+	border: #e1e1e1 solid 2px;
+	font-family: : 'Lato', Arial;
+}
+
+.post_text{
+  position:relative; 
+  left:30px; 
+  top :10px;
+  color: #34495e;
+  font-family: 'Lato', Arial;
+  font-weight: bold;
+  padding-bottom: 10px;
+}
+
+.hr_post{
+  position:relative;
+  top: 16px;
+  left: 1px;
+  height: 0px;
+  width: 895px;
+  border: #34495e solid 2px;
+}
+
+.boxes{
+  position: relative;
+  left: 200px;
+  width: 900px;
+  height: 245px;
+  background: #bdc3c7;
+  border: #e1e1e1 solid 1px;
+  font-family: 'Lato', Arial, sans-serif;
+  overflow: hidden;
+  margin: 20px;
+}
+
+input[type=submit]{
+position: relative;
+  padding: 0 10px;
+  width: 70px;
+  height: 37px;
+  font-size: 18px; 
+  font-weight: normal;
+  color: #fff;
+  text-shadow: 0 1px #e3f1f1;
+  background: #00cc66;
+  border: 1px solid;
+  border-color: #b4ccce #b3c0c8 #9eb9c2;
+  border-radius: 0px;
+  outline: 0;
+  cursor: pointer;
+  font-family: 'Lato', Arial, sans-serif;
+  
+  @include box-sizing(content-box);
+  @include linear-gradient(top, #edf5f8, #cde5ef);
+  @include box-shadow(inset 0 1px white, 0 1px 2px rgba(black, .15));
+
+  &:hover {
+
+    background: #009966;
+    border-color: #9eb9c2 #b3c0c8 #b4ccce;
+    @include box-shadow(inset 0 0 3px rgba(black, .2));
+  }
+}
+
+
+input[type=text], input[type=password] {
+  
+  position: relative;
+  padding: 10px;
+  font-size: 14px;
+  font-weight: 800;
+  margin-left: 35px;
+  margin-right: 15px;
+  margin-bottom: 30px;
+  margin-top: 10px;
+  width: 220px;
+  height: 30px;
+  color: #404040;
+  background: #f9f9f9;
+  border: 0px solid;
+  border-color: #c4c4c4 #d1d1d1 #d4d4d4;
+  border-radius: 2px;
+  outline: 1px solid #eff4f7;
+  -moz-outline-radius: 3px;
+  @include box-shadow(inset 0 1px 3px rgba(black, .12));
+  
+   &:focus {
+
+    border-color: #7dc9e2;
+    outline-color: #dceefc;
+    outline-offset: 0;
+  }
+ }
+
+
+ .upload {
+  
+  position: absolute;
+  padding: 10px 0px;
+  width: 240px;
+  height: 25px;
+  font-size: 18px;
+  font-weight: normal;
+  color: #fff;
+  text-align: center;
+  text-shadow: 0 1px #e3f1f1;
+  background: #ff3333;
+  border: 1px solid;
+  border-color: #b4ccce #b3c0c8 #9eb9c2;
+  border-radius: 0px;
+  outline: 0;
+  cursor: pointer;
+  font-family: 'Lato', Arial, sans-serif;
+  
+  @include box-sizing(content-box);
+  @include linear-gradient(top, #edf5f8, #cde5ef);
+  @include box-shadow(inset 0 1px white, 0 1px 2px rgba(black, .15));
+
+  &:hover {
+
+    background: #009966;
+    border-color: #9eb9c2 #b3c0c8 #b4ccce;
+    @include box-shadow(inset 0 0 3px rgba(black, .2));
+  }
+}
+
+.introBar {
+
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  width:1350px;
+  height: 70px;
+  background: #336699;
+  z-index: 10;
+}
+
+.introHead1 {
+  
+  position: fixed;
+  top: 18px;
+  left: 35px;
+  color: #fff; 
+  letter-spacing: 1px;
+  font-size: 1.7em;
+  font-weight: 800;
+  font-family: 'Lato' , 'Audiowide', cursive;
+}
